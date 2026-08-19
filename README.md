@@ -6,7 +6,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 
 ---
 
-## 👥 Team Members & Task Distribution (توزيع المهام)
+## 👥 Team Members & Task Distribution 
 
 ### 👤 Member 1: Infrastructure & Authentication 
 **Responsible for setting up the core app, database connection, and user security.**
@@ -68,7 +68,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 * **Authentication Logic (Controller & Routes):** Fully implemented secure **Registration** with password hashing using `bcrypt` and **Login** which issues encrypted `JWT Tokens` for session tracking.
 
 ### 👤 Member 3 (Bookings & Technical Setup) - DONE ✅
-**تم إنهاء الهيكل التقني والموديلات الأساسية ونظام الدمج:**
+
 * **Soft Files Initialization:** Set up the main directory tree, including `bookingController.ts`, to allow the team to work instantly without path conflicts.
 * **Booking Schema:** Built the central business logic structure for gym spaces (`src/models/Booking.ts`) to handle seat statuses (`confirmed`, `cancelled`).
 * **Git Operations:** Successfully merged the main workspace branch with teammates' files without data loss.
