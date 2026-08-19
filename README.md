@@ -56,3 +56,5 @@ This repository contains the backend for the Gym Booking System, built with **No
    * Member 2: `git checkout -b feature/sessions`
    * Member 3: `git checkout -b feature/bookings`
 3. **Commit & Push:** Once your part is complete, push your branch and open a **Pull Request (PR)** on GitHub for review.
+ 
+ // devided with  Ai 
