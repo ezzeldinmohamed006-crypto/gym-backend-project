@@ -11,7 +11,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 ### 👤 Member 1: Infrastructure & Authentication 
 **Responsible for setting up the core app, database connection, and user security.**
 * **Files:** `src/config/db.ts`, `src/models/User.ts`, `src/middlewares/auth.ts`, `src/routes/authRoutes.ts`
-* **Tasks (المهام):**
+* **Tasks :**
   * Project initialization, TypeScript setup, and environment variables configurations.
   * Connect the server securely to **MongoDB Atlas / Local** using Mongoose.
   * Create **User Model** (Full Name, Email, Password, Role: Member/Trainer) with input validation.
@@ -23,7 +23,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 ### 👤 Member 2: Trainer & Class Sessions Management 
 **Responsible for the gym schedule logic, trainer operations, and search functionality.**
 * **Files:** `src/models/ClassSession.ts`, `src/controllers/sessionController.ts`, `src/routes/sessionRoutes.ts`
-* **Tasks (المهام):**
+* **Tasks :**
   * Create **ClassSession Model** (Title, Trainer, Time Slot, Capacity).
   * Implement Full **CRUD Operations** for Trainers to manage their own sessions only.
   * Apply **Business Rules for Sessions:**
@@ -37,7 +37,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 ### 👤 Member 3: Bookings Management, Documentation & Deployment 
 **Responsible for the core business booking operations, calculations, and public hosting.**
 * **Files:** `src/models/Booking.ts`, `src/controllers/bookingController.ts`, `src/routes/bookingRoutes.ts`
-* **Tasks (المهام):**
+* **Tasks :**
   * Create **Booking Model** (Session reference, Member reference, Status: booked/cancelled).
   * Implement endpoints for Members to browse available spots, book a session, or cancel a booking.
   * Apply **Strict Booking Business Rules:**
