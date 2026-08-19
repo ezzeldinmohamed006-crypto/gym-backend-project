@@ -6,12 +6,12 @@ This repository contains the backend for the Gym Booking System, built with **No
 
 ---
 
-## 👥 Team Members & Task Distribution (توزيع المهام)
+## 👥 Team Members & Task Distribution 
 
-### 👤 Member 1: Infrastructure & Authentication (البنية التحتية والحماية)
+### 👤 Member 1: Infrastructure & Authentication 
 **Responsible for setting up the core app, database connection, and user security.**
 * **Files:** `src/config/db.ts`, `src/models/User.ts`, `src/middlewares/auth.ts`, `src/routes/authRoutes.ts`
-* **Tasks (المهام):**
+* **Tasks :**
   * Project initialization, TypeScript setup, and environment variables configurations.
   * Connect the server securely to **MongoDB Atlas / Local** using Mongoose.
   * Create **User Model** (Full Name, Email, Password, Role: Member/Trainer) with input validation.
@@ -20,7 +20,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 
 ---
 
-### 👤 Member 2: Trainer & Class Sessions Management (المدربين والحصص الرياضية)
+### 👤 Member 2: Trainer & Class Sessions Management 
 **Responsible for the gym schedule logic, trainer operations, and search functionality.**
 * **Files:** `src/models/ClassSession.ts`, `src/controllers/sessionController.ts`, `src/routes/sessionRoutes.ts`
 * **Tasks (المهام):**
@@ -34,10 +34,10 @@ This repository contains the backend for the Gym Booking System, built with **No
 
 ---
 
-### 👤 Member 3: Bookings Management, Documentation & Deployment (الحجوزات والتوثيق والرفع)
+### 👤 Member 3: Bookings Management, Documentation & Deployment 
 **Responsible for the core business booking operations, calculations, and public hosting.**
 * **Files:** `src/models/Booking.ts`, `src/controllers/bookingController.ts`, `src/routes/bookingRoutes.ts`
-* **Tasks (المهام):**
+* **Tasks :**
   * Create **Booking Model** (Session reference, Member reference, Status: booked/cancelled).
   * Implement endpoints for Members to browse available spots, book a session, or cancel a booking.
   * Apply **Strict Booking Business Rules:**
@@ -49,7 +49,7 @@ This repository contains the backend for the Gym Booking System, built with **No
 
 ---
 
-## 🚀 Git Workflow for the Team (طريقة العمل على جيت)
+## 🚀 Git Workflow for the Team 
 1. **Pull the latest changes:** Always run `git pull origin main` before starting.
 2. **Create your feature branch:**
    * Member 1: `git checkout -b feature/auth`
@@ -59,17 +59,14 @@ This repository contains the backend for the Gym Booking System, built with **No
  
  // devided with  Ai 
 
- ## 🟢 Progress Report: Day 1 - Completed Features (ما تم إنجازه في اليوم الأول)
+ ## 🟢 Progress Report: Day 1 - Completed Features 
 
 ### 👤 Member 1 (Infrastructure & Authentication) - DONE ✅
-**تم إنهاء تأسيس البنية التحتية ومنظومة الحسابات بالكامل:**
 * **Database Connection:** Built the core MongoDB connection switch in `src/config/db.ts` and wired it into `src/app.ts`.
 * **User Identity Schema:** Created the standard blueprint for gym accounts (`src/models/User.ts`) enforcing secure roles (`Member` / `Trainer`) and email uniqueness.
 * **Authentication Logic (Controller & Routes):** Fully implemented secure **Registration** with password hashing using `bcrypt` and **Login** which issues encrypted `JWT Tokens` for session tracking.
 
-### 👤 Member 3 (Bookings & Technical Setup) - DONE ✅
-**تم إنهاء الهيكل التقني والموديلات الأساسية ونظام الدمج:**
-* **Soft Files Initialization:** Set up the main directory tree, including `bookingController.ts`, to allow the team to work instantly without path conflicts.
+### 👤 Member 3 (Bookings & Technical Setup) - DONE ✅* **Soft Files Initialization:** Set up the main directory tree, including `bookingController.ts`, to allow the team to work instantly without path conflicts.
 * **Booking Schema:** Built the central business logic structure for gym spaces (`src/models/Booking.ts`) to handle seat statuses (`confirmed`, `cancelled`).
 * **Git Operations:** Successfully merged the main workspace branch with teammates' files without data loss.
 
