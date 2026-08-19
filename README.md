@@ -56,3 +56,21 @@ This repository contains the backend for the Gym Booking System, built with **No
    * Member 2: `git checkout -b feature/sessions`
    * Member 3: `git checkout -b feature/bookings`
 3. **Commit & Push:** Once your part is complete, push your branch and open a **Pull Request (PR)** on GitHub for review.
+ 
+ // devided with  Ai 
+
+ ## 🟢 Progress Report: Day 1 - Completed Features (ما تم إنجازه في اليوم الأول)
+
+### 👤 Member 1 (Infrastructure & Authentication) - DONE ✅
+**تم إنهاء تأسيس البنية التحتية ومنظومة الحسابات بالكامل:**
+* **Database Connection:** Built the core MongoDB connection switch in `src/config/db.ts` and wired it into `src/app.ts`.
+* **User Identity Schema:** Created the standard blueprint for gym accounts (`src/models/User.ts`) enforcing secure roles (`Member` / `Trainer`) and email uniqueness.
+* **Authentication Logic (Controller & Routes):** Fully implemented secure **Registration** with password hashing using `bcrypt` and **Login** which issues encrypted `JWT Tokens` for session tracking.
+
+### 👤 Member 3 (Bookings & Technical Setup) - DONE ✅
+**تم إنهاء الهيكل التقني والموديلات الأساسية ونظام الدمج:**
+* **Soft Files Initialization:** Set up the main directory tree, including `bookingController.ts`, to allow the team to work instantly without path conflicts.
+* **Booking Schema:** Built the central business logic structure for gym spaces (`src/models/Booking.ts`) to handle seat statuses (`confirmed`, `cancelled`).
+* **Git Operations:** Successfully merged the main workspace branch with teammates' files without data loss.
+
+---
