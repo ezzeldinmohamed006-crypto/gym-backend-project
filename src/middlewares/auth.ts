@@ -34,8 +34,7 @@ export const authenticate = (
 
     const decoded = jwt.verify(
       token,
-      process.env.JWT_SECRET || 'super_secret_key_123'
-    ) as {
+      process.env.JWT_SECRET as string    ) as {
       userId: string;
       role: 'Member' | 'Trainer';
     };

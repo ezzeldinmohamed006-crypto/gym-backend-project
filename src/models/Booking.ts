@@ -3,7 +3,7 @@ import { Schema, model, Document, Types } from 'mongoose';
 export interface IBooking extends Document {
   user: Types.ObjectId;
   session: Types.ObjectId;
-  status: 'confirmed' | 'cancelled';
+  status: 'booked' | 'cancelled';
   createdAt: Date;
 }
 
@@ -21,8 +21,8 @@ const bookingSchema = new Schema<IBooking>(
     },
     status: {
       type: String,
-      enum: ['confirmed', 'cancelled'],
-      default: 'confirmed'
+      enum: ['booked', 'cancelled'],
+      default: 'booked'
     }
   },
   { 

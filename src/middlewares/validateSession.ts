@@ -1,11 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 
 export const validateSession = (
-  req: Request,res: Response,next: NextFunction): void => {
-  const {title,trainer,date,startTime,endTime,capacity} 
-  = req.body;
+  req: Request, res: Response, next: NextFunction): void => {
+  const { title, date, startTime, endTime, capacity } = req.body;
 
-  if (!title ||!trainer ||!date ||!startTime ||!endTime ||capacity === undefined) {
+  if (!title || !date || !startTime || !endTime || capacity === undefined) {
     res.status(400).json({
       message: 'All session fields are required'
     });
@@ -19,5 +18,11 @@ export const validateSession = (
     return;
   }
 
+  if (new Date(date) < new Date()) {
+    res.status(400).json({
+      message: 'لا يمكن إنشاء جلسة في وقت ماضٍ'
+    });
+    return;
+  }
   next();
 };

@@ -7,6 +7,22 @@ export const register = async (req: Request, res: Response): Promise<void> => {
   try {
     const { fullName, email, password, role } = req.body;
 
+    if (!fullName || !email || !password || !role) {
+      res.status(400).json({ message: 'كل الحقول مطلوبة' });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      res.status(400).json({ message: 'صيغة البريد الإلكتروني غير صحيحة' });
+      return;
+    }
+
+    if (password.length < 8) {
+      res.status(400).json({ message: 'كلمة المرور يجب أن تكون 8 أحرف على الأقل' });
+      return;
+    }
+
     const userExists = await User.findOne({ email });
     if (userExists) {
       res.status(400).json({ message: 'هذا البريد الإلكتروني مسجل بالفعل!' });
@@ -19,7 +35,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     const newUser = await User.create({
       fullName,
       email,
-      password: hashedPassword, //encryption of the password
+      password: hashedPassword,
       role
     });
 
@@ -51,7 +67,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const token = jwt.sign(
       { userId: user._id, role: user.role },
-      process.env.JWT_SECRET || 'super_secret_key_123', 
+      process.env.JWT_SECRET as string,
       { expiresIn: '1d' } 
     );
 
