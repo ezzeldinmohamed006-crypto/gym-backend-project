@@ -10,11 +10,11 @@ export const createBooking = async (req: Request, res: Response) => {
       return res.status(400).json({ message: 'userId and sessionId are required' });
     }
 
-    // Check double booking
+    // Check double booking using 'booked'
     const alreadyBooked = await Booking.findOne({
       user: userId,
       session: sessionId,
-      status: 'confirmed'
+      status: 'booked'
     });
 
     if (alreadyBooked) {
@@ -29,7 +29,7 @@ export const createBooking = async (req: Request, res: Response) => {
 
     const activeBookings = await Booking.countDocuments({
       session: sessionId,
-      status: 'confirmed'
+      status: 'booked'
     });
 
     if (activeBookings >= targetSession.capacity) {
@@ -82,7 +82,7 @@ export const getUserBookings = async (req: Request, res: Response) => {
 
     const userBookings = await Booking.find({
       user: userId,
-      status: 'confirmed'
+      status: 'booked'
     }).populate('session');
 
     return res.status(200).json({
