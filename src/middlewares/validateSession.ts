@@ -20,7 +20,7 @@ export const validateSession = (
 
   if (new Date(date) < new Date()) {
     res.status(400).json({
-      message: 'لا يمكن إنشاء جلسة في وقت ماضٍ'
+      message: 'A session cannot be created in the past.'
     });
     return;
   }

@@ -14,6 +14,7 @@ import { validateSession } from '../middlewares/validateSession.js';
 
 const router = Router();
 
+
 router.post(
   '/',
   authenticate,

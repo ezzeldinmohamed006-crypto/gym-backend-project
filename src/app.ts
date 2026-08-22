@@ -6,13 +6,13 @@ import { connectDB } from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import swaggerUi from 'swagger-ui-express';
 import { swaggerSpec } from './config/swagger.js';
-
+import { logger } from './middlewares/logger.js';
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
-
+app.use(logger);
 connectDB();
 
 app.use('/api/auth', authRoutes);
